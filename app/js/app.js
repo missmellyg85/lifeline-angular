@@ -10,7 +10,13 @@ angular.module('myApp', [
   'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/client-index', {templateUrl: 'partials/client/client-index.html', controller: 'Client'});
+  $routeProvider.when('/client-services', {templateUrl: 'partials/client/client-services.html', controller: 'Client'});
+  $routeProvider.when('/client-services-icons', {templateUrl: 'partials/client/client-services-icons.html', controller: 'Client'});
+  $routeProvider.when('/client-stories', {templateUrl: 'partials/client/client-stories.html', controller: 'Client'});
+  $routeProvider.when('/client-about', {templateUrl: 'partials/client/client-about.html', controller: 'Client'});
+
+  $routeProvider.when('/supporter-index', {templateUrl: 'partials/supporter/supporter-index.html', controller: 'Supporter'});  
+
+  $routeProvider.otherwise({redirectTo: '/client-index'});
 }]);
