@@ -1,18 +1,20 @@
-<ul class="icons">
-    <li>
+<ul class="icons" ng-model="service">
+    <li ng-click="service='partials/client/services/tests.html'">
         <img src="img/icons/services.png"/>
-        <a href="#">Pregnancy Tests &amp; Ultrasounds</a>
+        <p>Pregnancy Tests &amp; Ultrasounds</p>
     </li>
-    <li>
+    <li ng-click="service='partials/client/services/programs.html'">
         <img src="img/icons/programs.png"/>
-        <a href="#">Programs</a>
+        <p>Programs</p>
     </li>
-    <li>
+    <li ng-click="service='partials/client/services/referrals.html'">
         <img src="img/icons/community.png"/>
-        <a href="#">Community Referrals</a>
+        <p>Community Referrals</p>
     </li>
-    <li>
+    <li ng-click="service='partials/client/services/counseling.html'">
         <img src="img/icons/peer.png"/>
-        <a href="#">Peer Counseling</a>
+        <p>Peer Counseling</p>
     </li>
 </ul>
+
+<div ng-include="service"></div>
