@@ -4,8 +4,32 @@
     <p><b>All of our services are free and confidential.</b></p>
     <div class="left well">
         <p>Request an appointment by filling in the form below:</p>
-        <form>
-            
+        <form novalidate class="css-form">
+            <fieldset>
+                Name: <input type="text" ng-model="appointment.name" required />
+                E-mail: <input type="email" ng-model="appointment.email" required />
+                Date of Birth: <input type="text" ng-model="appointment.dob" />
+            </fieldset>
+            <fieldset>
+                Have you been to Lifeline before?
+                <label>Yes:<input type="radio" name="visited-before" ng-model="appointment.previous" value="true" /></label>
+                <label>No:<input type="radio" name="visited-before" ng-model="appointment.previous" value="false" /></label>
+            </fieldset>
+            <fieldset>
+                When would you like to visit?
+                <label>Day:</label>
+                <select ng-model="appointment.day" ng-options="d.day for d in appointmentDays"></select>
+                <label>Time:</label>
+                <select ng-model="appointment.time" ng-options="t.time for t in appointmentTimes"></select>
+            </fieldset>
+            <fieldset>
+                Requested service:
+                <select ng-model="appointment.service" ng-options="s.service for s in appointmentServices"></select>
+            </fieldset>
+            <p>We cannot guarantee that the appointment time you request will be available, however, we will do all we can to schedule an appointment for you as close to the time you requested as possible. You will receive a confirmation email for your appointment at the email address you listed above. </p>
+            <p><b>Please double check before hitting submit that you have entered the email address correctly. Thank you.</b></p>
+            <button ng-click="submit(appointment)">SAVE</button>
+            <button ng-click="reset()">RESET</button>
         </form>
     </div>
     <div class="right">

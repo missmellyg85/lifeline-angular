@@ -7,7 +7,7 @@ angular.module('myApp', [
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
-  'myApp.controllers'
+  'myAppControllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/client-index', {templateUrl: 'partials/client/client-index.html', controller: 'Client'});
@@ -15,6 +15,7 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/client-services-icons', {templateUrl: 'partials/client/client-services-icons.html', controller: 'Client'});
   $routeProvider.when('/client-stories', {templateUrl: 'partials/client/client-stories.html', controller: 'Client'});
   $routeProvider.when('/client-about', {templateUrl: 'partials/client/client-about.html', controller: 'Client'});
+  $routeProvider.when('/client-contact', {templateUrl: 'partials/client/client-contact.html', controller: 'Client'});
 
   $routeProvider.when('/supporter-index', {templateUrl: 'partials/supporter/supporter-index.html', controller: 'Supporter'});  
 
