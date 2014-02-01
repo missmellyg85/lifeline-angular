@@ -1,10 +1,10 @@
-<div class="header" ng-model="CtrlMain">
+<div class="header" ng-controller="Lifeline">
     <div class="support">
-        <a href="#"><input type="button" value="Support Lifeline"></a>
+        <a href="{{info.supporterUrl}}"><input type="button" value="Support Lifeline"></a>
     </div>
     <div class="address">
-        <h1>Lifeline Pregnancy Help Clinic</h1>
-        <h3>660-665-5688 &#9679; 306 W. Washington Street, Kirksville, MO</h3>
+        <h1>{{info.name}}</h1>
+        <h3>{{info.phone}} &#9679; {{info.street}}, {{info.citystate}}</h3>
     </div>
 
     <ul class="navigation">
