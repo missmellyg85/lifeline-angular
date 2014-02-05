@@ -76,8 +76,6 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
         if ($scope.appointmentForm.$valid) {
             $http.post('process.php', $scope.appointment)
                 .success(function(data) {
-                    console.log(data);
-        
                     if (!data.success) {
                         // if not successful, bind errors to error variables
                         $scope.errorName = data.errors.name;
