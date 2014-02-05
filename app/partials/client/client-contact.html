@@ -8,7 +8,7 @@
             <div>
                 <label>Name*</label>
                 <input type="text" name="name" ng-model="appointment.name" required />
-                <p ng-show="appointmentForm.name.$invalid && submitted">Your name is required</p>
+                <p ng-show="(appointmentForm.name.$invalid && submitted) || (errors.name)">Your name is required</p>
             </div>
             <div>
                 <label>Email*</label>
@@ -46,6 +46,7 @@
                 <button type="submit">Submit</button>
             </div>
         </form>
+        <div>{{error}}</div>
         <div>{{appointment}}</div>
     </div>
     <div class="address-block" ng-controller="Lifeline">

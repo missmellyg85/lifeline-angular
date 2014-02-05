@@ -76,18 +76,24 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
         if ($scope.appointmentForm.$valid) {
             $http.post('process.php', $scope.appointment)
                 .success(function(data) {
-                    if (!data.success) {
-                        // if not successful, bind errors to error variables
-                        $scope.errorName = data.errors.name;
-                        $scope.errorSuperhero = data.errors.superheroAlias;
+                    if (data.errors) {
+                        $scope.errors = [];
+                        for(var error in data.errors) {
+                            $scope.errors[error] = true;
+                        }
+                    } else if(data.error) {
+                        $scope.error = data.error;
                     } else {
                         // if successful, bind success message to message
                         $scope.message = data.message;
                     }
-            });
+                })
+                .error(function(data) {
+                    
+                });
         };
     };
-  }]);
+}]);
 
 myAppControllers.controller('Supporter', ['$scope', '$routeParams',
   function($scope, $routeParams) {
