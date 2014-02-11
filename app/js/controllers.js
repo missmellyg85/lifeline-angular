@@ -16,22 +16,6 @@ myAppControllers.controller('Lifeline', ['$scope', '$routeParams', '$location',
             email: 'LifelinePRC@sbcglobal.net',
             supporterUrl: 'http://friendsoflifelinephc.org/'
             };
-
-        $scope.allowDisplay = false;
-        $scope.assignDisplayAllowance = function() {
-            $scope.allowDisplay = true;
-        };
-        
-        var servicePrefix = "partials/lifeline/services/";
-        $scope.service = (($routeParams.service != null)?servicePrefix+$routeParams.service:null);
-        
-        $scope.serviceIconClick = function(service) {
-            if (!$scope.allowDisplay) {
-                var newPath = '/lifeline-services/'+service;
-                $location.path(newPath);
-            }
-            $scope.service = servicePrefix+service;
-        };
     }]);
 
 myAppControllers.controller('MainCtrl', ['$scope', '$route', '$routeParams', '$location',
@@ -71,6 +55,22 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
             {"dob": "/^\d{1,2}\/\d{1,2}\/\d{2,4}$/"}
         ]}
     ];
+
+    $scope.allowDisplay = false;
+    $scope.assignDisplayAllowance = function() {
+        $scope.allowDisplay = true;
+    };
+    
+    var servicePrefix = "partials/lifeline/services/";
+    $scope.service = (($routeParams.service != null)?servicePrefix+$routeParams.service:null);
+    
+    $scope.serviceIconClick = function(service) {
+        if (!$scope.allowDisplay) {
+            var newPath = '/client-services/'+service;
+            $location.path(newPath);
+        }
+        $scope.service = servicePrefix+service;
+    };
     
     $scope.appointment = {};
     $scope.submitForm = function() {
@@ -98,7 +98,23 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
 
 }]);
 
-myAppControllers.controller('Supporter', ['$scope', '$routeParams',
-  function($scope, $routeParams) {
+myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
+  function($scope, $routeParams, $location) {
     $scope.navigation = "partials/supporter/supporter-navigation.html";
+
+    $scope.allowDisplay = false;
+    $scope.assignDisplayAllowance = function() {
+        $scope.allowDisplay = true;
+    };
+
+    var servicePrefix = "partials/lifeline/services/";
+        $scope.service = (($routeParams.service != null)?servicePrefix+$routeParams.service:null);
+
+    $scope.serviceIconClick = function(service) {
+        if (!$scope.allowDisplay) {
+            var newPath = '/supporter-services/'+service;
+            $location.path(newPath);
+        }
+        $scope.service = servicePrefix+service;
+    };
   }]);
