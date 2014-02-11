@@ -4,8 +4,8 @@
 
 var myAppControllers = angular.module('myAppControllers', []);
 
-myAppControllers.controller('Lifeline', ['$scope',
-    function($scope) {
+myAppControllers.controller('Lifeline', ['$scope', '$routeParams', '$location',
+    function($scope, $routeParams, $location) {
         $scope.info = {
             name: 'Lifeline Pregnancy Help Clinic',
             street: '306 W. Washington Street',
@@ -16,33 +16,35 @@ myAppControllers.controller('Lifeline', ['$scope',
             email: 'LifelinePRC@sbcglobal.net',
             supporterUrl: 'http://friendsoflifelinephc.org/'
             };
+
+        $scope.allowDisplay = false;
+        $scope.assignDisplayAllowance = function() {
+            $scope.allowDisplay = true;
+        };
+        
+        var servicePrefix = "partials/lifeline/services/";
+        $scope.service = (($routeParams.service != null)?servicePrefix+$routeParams.service:null);
+        
+        $scope.serviceIconClick = function(service) {
+            if (!$scope.allowDisplay) {
+                var newPath = '/lifeline-services/'+service;
+                $location.path(newPath);
+            }
+            $scope.service = servicePrefix+service;
+        };
     }]);
 
 myAppControllers.controller('MainCtrl', ['$scope', '$route', '$routeParams', '$location',
     function($scope, $route, $routeParams, $location) {
         $scope.$route = $route;
         $scope.$location = $location;
-        $scope.$routeParams = $routeParams;  
+        $scope.$routeParams = $routeParams; 
+        $scope.current = $location.path(); 
     }]);
 
 myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$http',
   function($scope, $routeParams, $location, $http) {
-    
-    $scope.allowDisplay = false;
-    $scope.assignDisplayAllowance = function() {
-        $scope.allowDisplay = true;
-    };
-    
-    var servicePrefix = "partials/client/services/";
-    $scope.service = (($routeParams.service != null)?servicePrefix+$routeParams.service:null);
-    
-    $scope.serviceIconClick = function(service) {
-        if (!$scope.allowDisplay) {
-            var newPath = '/client-services/'+service;
-            $location.path(newPath);
-        }
-        $scope.service = servicePrefix+service;
-    };
+    $scope.navigation = "partials/client/client-navigation.html";
     
     $scope.appointmentDays = [
         {day: 'Monday'},
@@ -93,8 +95,10 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
                 });
         };
     };
+
 }]);
 
 myAppControllers.controller('Supporter', ['$scope', '$routeParams',
   function($scope, $routeParams) {
+    $scope.navigation = "partials/supporter/supporter-navigation.html";
   }]);
