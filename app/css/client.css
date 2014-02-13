@@ -1,6 +1,53 @@
-ul.icons {
-    list-style:none;
+body{
+	background-image: url("../img/client/background.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-color: #f7fbf2;
 }
+
+/* Navigation and Headers */
+
+.header {margin-bottom:60px;}
+
+.header .support{
+	width:20%;
+	margin-top: 10px;
+}
+
+.header .address{
+	width:80%;
+	text-align: right;
+}
+
+.header .address > h1, h2  {margin:5px 0; padding:0;}
+.header .address > h1 {color:#99cc33; font-style: italic;}
+.header .address > h2 {color:#ccc; font-weight: normal;}
+
+small.muted {font-size: 0.8em;}
+
+ul.navigation {list-style-type: none; padding:1px 40px;}
+
+.navigation li {
+	width:20%;
+	display:inline-block;
+	font-size: 18px;
+	text-align: center;
+}
+
+.navigation li a {color:white;}
+.navigation li a:hover {color:#6d6d6d;}
+
+.rslides, .rslides img { width:940px; height:300px;}
+
+ul.rslides {
+	list-style-type: none;
+	padding-left:0;
+	width: 940px;
+	height:300px;
+}
+
+/* Service Icons */
+ul.icons {list-style:none;}
 
 .icons li {
     display:inline-block;
@@ -10,8 +57,4 @@ ul.icons {
 .icons li img {
     height:100px;
     width:100px;
-}
-
-.rslides, .rslides img {
-    width:500px;
 }

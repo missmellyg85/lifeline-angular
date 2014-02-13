@@ -4,17 +4,15 @@
 
 
 angular.module('myApp.directives', [])
-  // .directive('appVersion', ['version', function(version) {
-  //   return function(scope, elm, attrs) {
-  //     elm.text(version);
-  //   };
-  // }])
-  // // .directive('photoSlider', function() {
-  // //   return function(scope, elm, attrs) {
-  // //     //elm.text("hola");
-  // //     scope.beans = 1;
-  // //     setInterval(function(){
-  // //       console.log('missy');
-  // //     }, 7000);
-  // //   };
-  // // });
+  .directive('responsiveSlides', function() {
+      return {
+          restrict: 'A',
+          link: function(scope, element, attrs) {
+              angular.element(".rslides").responsiveSlides({
+                speed: 1500, // Integer: Speed of the transition, in milliseconds
+                timeout: 5000, // Integer: Time between slide transitions, in milliseconds
+                maxwidth: "500",           // Integer: Max-width of the slideshow, in pixels
+            });
+          }
+      };
+  }); 

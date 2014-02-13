@@ -1,28 +1,27 @@
 <div class="header" ng-controller="Lifeline">
-    <div class="support">
-        <a href="{{info.supporterUrl}}"><input type="button" value="Support Lifeline"></a>
-    </div>
-    <div class="address">
+    <div class="support top inline">
+        <a href="{{info.supporterUrl}}" class="btn">Support Lifeline</a>
+    </div><div class="address top inline">
         <h1>{{info.name}}</h1>
-        <h3>{{info.phone}} &#9679; {{info.street}}, {{info.citystate}}</h3>
+        <h2>{{info.phone}} <small class="muted">&#9679; {{info.street}}, {{info.citystate}}</small></h2>
     </div>
 
     <ul class="navigation">
-        <li><a href="#/client-index">Home</a></li>
-        <li><a href="#/client-services">Services</a></li>
-        <li><a href="#/client-stories">Stories</a></li>
-        <li><a href="#/client-contact">Contact</a></li>
-        <li><a href="#/client-about">About</a></li>
+        <li><a href="#/client-index">Home</a></li><li>
+        <a href="#/client-services">Services</a></li><li>
+        <a href="#/client-stories">Stories</a></li><li>
+        <a href="#/client-contact">Contact</a></li><li>
+        <a href="#/client-about">About</a></li>
     </ul>
 
-    <div ng-controller="Client">The slide: {{slide}}</div>
-
-    <div class="rslides">
-        <img src="img/slides/logo.jpg" alt="">
-        <img src="img/slides/image1.jpg" alt="">
-        <img src="img/slides/image6.jpg" alt="">
-        <img src="img/slides/image3.jpg" alt="">
-        <img src="img/slides/image2.jpg" alt="">
+    <div responsive-slides>
+        <ul class="rslides">
+            <li><img src="img/slides/logo.jpg" alt=""></li>
+            <li><img src="img/slides/image1.jpg" alt=""></li>
+            <li><img src="img/slides/image6.jpg" alt=""></li>
+            <li><img src="img/slides/image3.jpg" alt=""></li>
+            <li><img src="img/slides/image2.jpg" alt=""></li>
+        </ul>
     </div>
 </div>
     
