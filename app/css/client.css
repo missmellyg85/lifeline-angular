@@ -45,16 +45,3 @@ ul.rslides {
 	width: 940px;
 	height:300px;
 }
-
-/* Service Icons */
-ul.icons {list-style:none;}
-
-.icons li {
-    display:inline-block;
-    width:110px;
-}
-
-.icons li img {
-    height:100px;
-    width:100px;
-}
