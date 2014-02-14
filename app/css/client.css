@@ -53,10 +53,19 @@ ul.rslides {
 }
 .content .index-blurb p {margin-top:18px;margin-left:20px;}
 
-.content .address {
+.content .index-address {
 	width:34%;
 	font-size: 1.2em;
 	line-height: 1.2em;
 }
 
-.content .address ul {list-style-type: none; padding:0;margin-left:55px;}
+.content .index-address ul {list-style-type: none; padding:0;margin-left:55px;}
+
+.contact .appointment-request {width:50%;
+}
+
+.contact .address-block {width:50%;}
+.contact .address-block > *{margin-left:40px;}
+.contact .address-block h3 {margin:0;}
+
+.content .hours > span {display:block;text-indent: 30px;}

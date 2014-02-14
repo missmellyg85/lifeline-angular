@@ -1,11 +1,11 @@
 <div ng-include="navigation"></div>
-<div>
-    <h1>Contact Us</h1>
+<h1>Contact Us</h1>  
+<div class="content contact">
     <p>Lifeline is a non-profit organization, providing help and non-judgmental support to anyone facing unexpected pregnancy, regardless of his or her income, marital status, religious beliefs or what decision is made regarding the pregnancy.</p>
     <p><b>All of our services are free and confidential.</b></p>
-    <div class="well">
+    <div class="well appointment-request inline valign-top">
         <p>Request an appointment by filling in the form below:</p>
-        <form name="appointmentForm" class="css-form" ng-submit="submitForm()" novalidate>
+        <form name="appointmentForm" class="contact-form css-form" ng-submit="submitForm()" novalidate>
             <div>
                 <label>Name*</label>
                 <input type="text" name="name" ng-model="appointment.name" required />
@@ -47,16 +47,18 @@
                 <button type="submit">Submit</button>
             </div>
         </form>
-    </div>
-    <div class="address-block" ng-controller="Lifeline">
-        <p class="street">{{info.street}}</p>
-        <p class="location"><span class="citystate">{{info.citystate}}</span> <span class="zip">{{info.zip}}</span></p>
-        <p class="phone">Phone: {{info.phone}}</p>
-        <p class="fax">Fax: {{info.fax}}</p>
-        <a class="email" href="mailto:{{address.email}}">{{info.email}}</a>
-    </div>
-    <iframe style="margin-top:50px;" width="350" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=306+W.+Washington+Kirksville,+MO+63501&amp;oe=utf-8&amp;client=firefox-a&amp;channel=rcs&amp;ie=UTF8&amp;hq=&amp;hnear=306+W+Washington+St,+Kirksville,+Missouri+63501&amp;t=m&amp;source=embed&amp;ll=40.194479,-92.585735&amp;spn=0.009834,0.012832&amp;z=15&amp;output=embed"></iframe>
-    <div>
-        <small><a href="https://maps.google.com/maps?q=306+W.+Washington+Kirksville,+MO+63501&amp;oe=utf-8&amp;client=firefox-a&amp;channel=rcs&amp;ie=UTF8&amp;hq=&amp;hnear=306+W+Washington+St,+Kirksville,+Missouri+63501&amp;t=m&amp;source=embed&amp;ll=40.194479,-92.585735&amp;spn=0.009834,0.012832&amp;z=15" style="text-align:left">View Larger Map</a></small>
+    </div><div class="address-block inline" ng-controller="Lifeline">
+        <div class="address">
+            <h1>{{info.name}}</h3>
+            <h3 class="street">{{info.street}}</h3>
+            <h3 class="location"><span class="citystate">{{info.citystate}}</span> <span class="zip">{{info.zip}}</span></h3>
+            <h3 class="phone">Phone: {{info.phone}}</h3>
+            <h3 class="fax">Fax: {{info.fax}}</h3>
+            <a class="email" href="mailto:{{address.email}}">{{info.email}}</a>
+        </div>
+        <iframe style="margin-top:50px;" width="350" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=306+W.+Washington+Kirksville,+MO+63501&amp;oe=utf-8&amp;client=firefox-a&amp;channel=rcs&amp;ie=UTF8&amp;hq=&amp;hnear=306+W+Washington+St,+Kirksville,+Missouri+63501&amp;t=m&amp;source=embed&amp;ll=40.194479,-92.585735&amp;spn=0.009834,0.012832&amp;z=15&amp;output=embed"></iframe>
+        <div>
+            <small><a href="https://maps.google.com/maps?q=306+W.+Washington+Kirksville,+MO+63501&amp;oe=utf-8&amp;client=firefox-a&amp;channel=rcs&amp;ie=UTF8&amp;hq=&amp;hnear=306+W+Washington+St,+Kirksville,+Missouri+63501&amp;t=m&amp;source=embed&amp;ll=40.194479,-92.585735&amp;spn=0.009834,0.012832&amp;z=15" style="text-align:left">View Larger Map</a></small>
+        </div>
     </div>
 </div>
