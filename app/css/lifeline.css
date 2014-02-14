@@ -15,6 +15,16 @@ ul.icons {
     width:100px;
 }
 
-img.group{
-	margin:30px 0 0 0;
-}
+img.group{margin:30px 0 0 0;}
+
+img.test{width:300px;margin-left:35px;}
+.test-blurb {width:calc(100% - 300px - 35px);};
+
+.programs {background-color: #ccf6cc;}
+.programs > img {width:100%;}
+
+img.community {width:650px;margin-left:35px;}
+.community-blurb {width:calc(100% - 650px - 35px);}
+
+img.counseling {width:270px;margin-right:35px;}
+.counseling-blurb {width:calc(100% - 270px - 35px);}
