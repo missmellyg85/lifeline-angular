@@ -1,16 +1,16 @@
 <div ng-include="navigation"></div>
 <h1>Offering the help you need throughout an unexpected pregnancy</h1>
-<div class="well">
-    <div>
-        Lifeline has no financial interest in your pregnancy because we do not perform abortions or arrange adoptions. Instead, we provide you with all the information you need to make an informed choice.
-        <b>For this reason, all of our services are free and confidential.</b>
-    </div>
-    <div class="address" ng-controller="Lifeline">
+<div class="well content">
+    <div class="inline valign-top index-blurb">
+        <p>Lifeline has no financial interest in your pregnancy because we do not perform abortions or arrange adoptions. Instead, we provide you with all the information you need to make an informed choice.<br>
+        <b>For this reason, all of our services are free and confidential.</b></p>
+    </div><div class="address inline" ng-controller="Lifeline">
         <ul>
             <li>{{info.street}}</li>   
             <li>{{info.citystate}}</li>   
             <li>{{info.zip}}</li>
-            <li>{{info.phone}}</li>
+            <li>&nbsp;</li>
+            <li><b>{{info.phone}}</b></li>
             <li><a href="mailto:{{info.email}}">{{info.email}}</a></li>
         </ul>
     </div>

@@ -22,14 +22,21 @@ h2 {font-size: 18px;}
   margin-right: auto;
 }
 
-.footer{margin-top:50px;}
+.footer{margin-top:80px;}
 
-.top {
-  vertical-align: top;
-}
+.valign-top {vertical-align: top;}
 
-.inline {
-  display:inline-block;
+.inline {display:inline-block;}
+
+.content {margin:30px 0;}
+
+.well {
+  background-color: #fff;
+  padding:20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #EAF2ED;
 }
 
 .btn {

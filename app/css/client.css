@@ -45,3 +45,18 @@ ul.rslides {
 	width: 940px;
 	height:300px;
 }
+
+.content .index-blurb {
+	width:66%;
+	font-size: 1.3em;
+	line-height: 1.3em;
+}
+.content .index-blurb p {margin-top:18px;margin-left:20px;}
+
+.content .address {
+	width:34%;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+
+.content .address ul {list-style-type: none; padding:0;margin-left:55px;}
