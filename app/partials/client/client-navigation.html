@@ -1,6 +1,6 @@
 <div class="header" ng-controller="Lifeline">
     <div class="support valign-top inline">
-        <a href="{{info.supporterUrl}}" class="btn">Support Lifeline</a>
+        <span ng-include="info.supportButton"></span>
     </div><div class="address valign-top inline">
         <h1>{{info.name}}</h1>
         <h2>{{info.phone}} <small class="muted">&#9679; {{info.street}}, {{info.citystate}}</small></h2>

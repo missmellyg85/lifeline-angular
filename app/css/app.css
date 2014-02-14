@@ -11,10 +11,12 @@ body {
   color: #333333;
 }
 
-a {text-decoration: none;}
+a {text-decoration: none;color:#365C08;}
 
 h1 {font-size: 24px;}
 h2 {font-size: 18px;}
+
+hr {margin:20px 0;}
 
 #main, .footer {
   width: 940px;
