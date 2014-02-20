@@ -1,0 +1,29 @@
+body#beans{
+	background-image: none;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-color: #f7fbf2;
+}
+
+div.s_navigation {
+	/*background-color: #2D2D2D;*/
+	background-color: #fff;
+	list-style-type: none;
+	height:100px;
+}
+
+div.s_navigation > div {
+	display:inline-block;
+	vertical-align: top;
+	width:20%;
+	text-align: center;
+}
+
+div.s_navigation > div span {
+	display:none;
+}
+
+div.s_navigation > div:hover > span {
+	display:block;
+	background-color: #ff33dd;
+}

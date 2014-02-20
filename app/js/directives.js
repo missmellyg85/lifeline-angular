@@ -24,4 +24,13 @@ angular.module('myApp.directives', [])
       }
     }
   })
+  .directive('supporterBody', function() {
+    return {
+      restrict: 'A',
+      link: function(scope,element,attrs) {
+        var bodytag = document.getElementsByTagName("body")[0];
+        bodytag.id = "beans";
+      }
+    }
+  })
   ; 
