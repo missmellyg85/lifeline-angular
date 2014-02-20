@@ -1,12 +1,21 @@
+<div class="s_header" ng-controller="Lifeline">
+    <div class="support valign-top inline">
+        <span ng-include="info.supportButton"></span>
+    </div><div class="address valign-top inline">
+        <h1>{{info.name}}</h1>
+        <h2>{{info.phone}} <small class="muted">&#9679; {{info.street}}, {{info.citystate}}</small></h2>
+    </div>
+</div>
+
 <div class="s_navigation" supporter-body>
     <div>
         <a href="#/supporter-index">Home</a>
     </div><div>
         <a href="#/supporter-learn-more">Learn More</a>
         <span><a href="#/supporter-services">Our Services</a></span>
-        <span>Video</span>
+        <span><a href="#">Video</a></span>
         <span><a href="#/supporter-stories">Client Stories<a/></span>
-        <span>New Projects</span>
+        <span><a href="#">New Projects</a></span>
     </div><div>
         <a href="#/supporter-get-involved">Get Involved</a>
         <span><a href="#/supporter-get-involved">Events</a></span>
