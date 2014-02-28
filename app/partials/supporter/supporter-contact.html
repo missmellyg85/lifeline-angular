@@ -1,17 +1,18 @@
 <div ng-include="navigation"></div>
 
-<div ng-include="'partials/lifeline/lifeline-staff.html'"></div>
-
-<div class="address-block" ng-controller="Lifeline">
-    <p class="street">{{info.street}}</p>
-    <p class="location"><span class="citystate">{{info.citystate}}</span> <span class="zip">{{info.zip}}</span></p>
-    <p class="phone">Phone: {{info.phone}}</p>
-    <p class="fax">Fax: {{info.fax}}</p>
-    <a class="email" href="mailto:{{address.email}}">{{info.email}}</a>
-</div>
-<iframe style="margin-top:50px;" width="350" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=306+W.+Washington+Kirksville,+MO+63501&amp;oe=utf-8&amp;client=firefox-a&amp;channel=rcs&amp;ie=UTF8&amp;hq=&amp;hnear=306+W+Washington+St,+Kirksville,+Missouri+63501&amp;t=m&amp;source=embed&amp;ll=40.194479,-92.585735&amp;spn=0.009834,0.012832&amp;z=15&amp;output=embed"></iframe>
 <div>
-    <small><a href="https://maps.google.com/maps?q=306+W.+Washington+Kirksville,+MO+63501&amp;oe=utf-8&amp;client=firefox-a&amp;channel=rcs&amp;ie=UTF8&amp;hq=&amp;hnear=306+W+Washington+St,+Kirksville,+Missouri+63501&amp;t=m&amp;source=embed&amp;ll=40.194479,-92.585735&amp;spn=0.009834,0.012832&amp;z=15" style="text-align:left">View Larger Map</a></small>
-</div>
+	<h1>Location</h1>
+	<div class="address-block" ng-controller="Lifeline">
+	    <p class="street">{{info.street}}</p>
+	    <p class="location"><span class="citystate">{{info.citystate}}</span> <span class="zip">{{info.zip}}</span></p>
+	    <p class="phone">Phone: {{info.phone}}</p>
+	    <p class="fax">Fax: {{info.fax}}</p>
+	    <a class="email" href="mailto:{{address.email}}">{{info.email}}</a>
+	</div>
+	<iframe style="margin-top:50px;" width="350" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=306+W.+Washington+Kirksville,+MO+63501&amp;oe=utf-8&amp;client=firefox-a&amp;channel=rcs&amp;ie=UTF8&amp;hq=&amp;hnear=306+W+Washington+St,+Kirksville,+Missouri+63501&amp;t=m&amp;source=embed&amp;ll=40.194479,-92.585735&amp;spn=0.009834,0.012832&amp;z=15&amp;output=embed"></iframe>
+	<div>
+	    <small><a href="https://maps.google.com/maps?q=306+W.+Washington+Kirksville,+MO+63501&amp;oe=utf-8&amp;client=firefox-a&amp;channel=rcs&amp;ie=UTF8&amp;hq=&amp;hnear=306+W+Washington+St,+Kirksville,+Missouri+63501&amp;t=m&amp;source=embed&amp;ll=40.194479,-92.585735&amp;spn=0.009834,0.012832&amp;z=15" style="text-align:left">View Larger Map</a></small>
+	</div>
 
-<div ng-include="partials/address-block.html"></div>
+	<div ng-include="partials/address-block.html"></div>
+</div>
