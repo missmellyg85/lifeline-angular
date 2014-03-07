@@ -36,6 +36,8 @@ div.s_navigation {
 	list-style-type: none;
 	height:98px;
 	font-size: 18px;
+	position: relative;
+	z-index: 10;
 }
 
 .s_navigation a, .s_navigation a:visited {
@@ -55,14 +57,15 @@ div.s_navigation {
 }
 
 .s_navigation > div span.drop {
-	display:none;
+	display: block;
+	opacity: 0;
 	padding:5px 0;
 	font-size: 16px;
+	background-color: #2D2D2D;
 }
 
 .s_navigation > div:hover > span.drop {
-	display:block;
-	background-color: #2D2D2D;
+	opacity: 1;
 }
 
 .s_navigation > div:hover > span:first-of-type {
@@ -86,23 +89,21 @@ div.s_navigation {
 	background-image: url('../img/tree.jpg');
 	background-repeat: no-repeat;
 	margin-left:calc((100% - 600px) / 2);
+	position: relative;
+	z-index: 1;
 }
 
 .blurb span{
-	/*display:none;*/
 	display:block;
-	background-color:#fff;
 	width:600px;
-	/*opacity: 0;*/
-	border: solid #d2d2d2 2px;
-
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+}
+.blurb h1 {
+	margin:0;
 }
 
-.community-block {height:400px;	}
-.team-block {height:200px; }
+.community-block {height:410px;	}
+.team-block {height:125px; }
+.team-block span {margin-left:310px;}
 .services-block {height:317px; }
 .community-block:hover span, .team-block:hover span, .services-block:hover span{
 	opacity: 1;
