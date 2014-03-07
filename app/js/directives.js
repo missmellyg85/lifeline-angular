@@ -42,4 +42,11 @@ angular.module('myApp.directives', [])
       }
     }
   })
+  // .directive('tree', function() {
+  //   return {
+  //     restrict: 'E',
+  //     replace: false,
+  //     templateUrl: '/img/tree.svg'
+  //   }
+  // })
   ; 

@@ -1,6 +1,7 @@
 <div class="s_header" ng-controller="Lifeline">
     <div class="support valign-top inline">
-        <span ng-include="info.supportButton"></span>
+        <span ng-include="info.supportButton" class="support-btn"></span>
+        <span ng-include="'partials/lifeline/lifeline-social-media.html'"></span>
     </div><div class="address valign-top inline">
         <h1>{{info.name}}</h1>
         <h2>{{info.phone}} <small class="muted">&#9679; {{info.street}}, {{info.citystate}}</small></h2>
@@ -11,15 +12,15 @@
     <div>
         <a href="#/supporter-index">Home</a>
     </div><div>
-        <a href="#">Learn More</a>
-        <span><a href="#/supporter-about">About Us<a/></span>
-        <span><a href="#/supporter-services">Our Services</a></span>
-        <span><a href="#/supporter-videos">Video</a></span>
-        <span><a href="#/supporter-stories">Client Stories<a/></span>
+        <span>Learn More</span>
+        <span class="drop"><a href="#/supporter-about">About Us<a/></span>
+        <span class="drop"><a href="#/supporter-services">Our Services</a></span>
+        <span class="drop"><a href="#/supporter-videos">Video</a></span>
+        <span class="drop"><a href="#/supporter-stories">Client Stories<a/></span>
     </div><div>
-        <a href="#">Get Involved</a>
-        <span><a href="#/supporter-events">Events</a></span>
-        <span><a href="#/supporter-new-projects">New Projects</a></span>
+        <span>Get Involved</span>
+        <span class="drop"><a href="#/supporter-events">Events</a></span>
+        <span class="drop"><a href="#/supporter-new-projects">New Projects</a></span>
         <!-- <span><a href="#">Annual Report</a></span> -->
     </div><div><a href="#/supporter-donate">Donate</a>
     </div><div>

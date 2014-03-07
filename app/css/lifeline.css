@@ -28,3 +28,7 @@ img.community {width:650px;margin-left:35px;}
 
 img.counseling {width:270px;margin-right:35px;}
 .counseling-blurb {width:calc(100% - 270px - 35px);}
+
+.social-media {
+	text-align:right;
+}
