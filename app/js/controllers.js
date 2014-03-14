@@ -89,6 +89,9 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
                     } else {
                         // if successful, bind success message to message and set form to pristine
                         $scope.message = data.message;
+                        $scope.appointmentForm.$setPristine();
+                        $scope.submitted = false;
+                        $scope.appointment = {};
                     }
                 })
                 .error(function(data) {
