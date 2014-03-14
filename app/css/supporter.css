@@ -110,5 +110,16 @@ div.s_navigation {
 	-webkit-transition: opacity .1s ease-in;
 }
 
+#supporter .address-block{
+	margin:0 60px;
+	font-weight: bold;
+}
+
+.map {
+	margin-left:80px;
+	margin-top: 15px;
+}
+
+/* YouTube player */
 #ytplayer {	margin-left:calc((100% - 640px) / 2);}
 .ytsubscribe {float:right;}
