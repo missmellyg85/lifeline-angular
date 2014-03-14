@@ -87,7 +87,7 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
                     } else if(data.error) {
                         $scope.error = data.error;
                     } else {
-                        // if successful, bind success message to message
+                        // if successful, bind success message to message and set form to pristine
                         $scope.message = data.message;
                     }
                 })

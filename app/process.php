@@ -28,7 +28,7 @@ if ( ! empty($errors)) {
     if(sendAppointmentRequest($pdata)){
         // if the email sent and there are no errors, return a message
         $data['success'] = true;
-        $data['message'] = 'Success!';
+        $data['message'] = 'Request has been submitted! You will be contacted soon to confirm an appointment date.';
     } else {
         // if the email could not send, return a message
         $data['success'] = false;
