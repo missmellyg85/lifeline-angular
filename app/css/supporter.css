@@ -57,15 +57,14 @@ div.s_navigation {
 }
 
 .s_navigation > div span.drop {
-	display: block;
-	opacity: 0;
+	display: none;
 	padding:5px 0;
 	font-size: 16px;
 	background-color: #2D2D2D;
 }
 
 .s_navigation > div:hover > span.drop {
-	opacity: 1;
+	display: block;
 }
 
 .s_navigation > div:hover > span:first-of-type {
@@ -95,10 +94,22 @@ div.s_navigation {
 
 .blurb span{
 	display:block;
-	width:600px;
+	width:500px;
 }
-.blurb h1 {
-	margin:0;
+
+.blurb a:hover {color:#1F3506}
+.blurb h1 {margin:5px 0;}
+
+.blurb > span > div {
+	/* default fallback */
+	background: rgb(255, 255, 255) transparent;
+	/* nice browsers */
+	background: rgba(255, 255, 255, 0.9);
+	padding:15px;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 }
 
 .community-block {height:410px;	}
