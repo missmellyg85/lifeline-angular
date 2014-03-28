@@ -122,10 +122,10 @@ div.s_navigation {
 	opacity: 1;
 }
 
-.community-block {height:410px;	}
+.services-block{height:410px;	}
 .team-block {height:125px; }
 .team-block span {margin-left:310px;}
-.services-block {height:317px; }
+.community-block  {height:317px; }
 .community-block:hover span, .team-block:hover span, .services-block:hover span{
 	opacity: 1;
 	-webkit-transition: opacity .1s ease-in;
