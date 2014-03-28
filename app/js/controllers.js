@@ -121,4 +121,40 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
         }
         $scope.service = servicePrefix+service;
     };
+
+    $scope.reg = {};
+    $scope.initiateTeammates = function() {
+        $scope.reg.teammate = [{}, {}, {}];    
+    }
+    $scope.clearTeammates = function() {
+        if($scope.reg.teammate){
+            delete $scope.reg.teammate;
+        }
+    }
+    $scope.submitRegForm = function() {
+        console.log("Submit reg form");
+        // $scope.submitted = true;
+        // if ($scope.walkRegistrationForm.$valid) {
+        //     $http.post('process.php', $scope.reg)
+        //         .success(function(data) {
+        //             if (data.errors) {
+        //                 $scope.errors = [];
+        //                 for(var error in data.errors) {
+        //                     $scope.errors[error] = true;
+        //                 }
+        //             } else if(data.error) {
+        //                 $scope.error = data.error;
+        //             } else {
+        //                 // if successful, bind success message to message and set form to pristine
+        //                 $scope.message = data.message;
+        //                 $scope.walkRegistrationForm.$setPristine();
+        //                 $scope.submitted = false;
+        //                 $scope.reg = {};
+        //             }
+        //         })
+        //         .error(function(data) {
+                    
+        //         });
+        // };
+    };
   }]);

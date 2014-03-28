@@ -13,7 +13,7 @@
 			<h3>Walk for Life</h3>
 			<p>Near the end of Spring, we hold our annual Walk for Life, inviting our community members to raise pledges for a 2-mile fun walk.  The sidewalks are full of families and friends who are "walking the walk" in showing their support for Lifeline's work in caring for those facing unexpected pregnancy.</p>
 			<div class="walk">
-				<h3>2014 Walk for Life</h3>
+				<h3 class="underline">2014 Walk for Life</h3>
 				<div class="inline">
 					<img src="../img/supporter/WalkForLife2014Shirt.gif">
 				</div><div class="indent well half-width inline valign-top">
@@ -21,8 +21,10 @@
 						<p><b>Saturday, June 7th, 2014</b><br>
 						Location: Baptist Student Union, 110 Normal Street<br>
 						Time: 10:00 Registration, 10:30 Walk begins</p>
-						<a href="../img/supporter/ImagineLifeBrochure2014.pdf" target="_blank" class="underline">Download Flyer</a>
+						<p><a href="../img/supporter/ImagineLifeBrochure2014.pdf" target="_blank" class="underline">Download Flyer</a></p>
+						<span class="btn" ng-click="showReg = !showReg">{{(showReg)?'Hide Registration':'Register'}}</span>
 					</div>
+					<div ng-show="showReg" ng-include="'partials/supporter/supporter-walk-registration.html'"></div>
 				</div>
 			</div>
 		</div>

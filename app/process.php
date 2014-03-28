@@ -58,9 +58,11 @@ function sendAppointmentRequest($posted){
     
     $message .= "\n\nWould prefer to visit on a ".$posted['day']['day']." at a preferred time of ".$posted['time']['time'];
     $message .= "\n\nType of visit: ".$posted['service']['service'];
+
+    $additional_headers = 'From: New Appointment Request <donotreply@lifeline.com>';
     
     /* Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
-    if (mail($to_email,$subject,$message)) {
+    if (mail($to_email,$subject,$message, $additional_headers)) {
       return true;
     } else {
       return false;
