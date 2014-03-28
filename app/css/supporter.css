@@ -141,6 +141,12 @@ div.s_navigation {
 	margin-top: 15px;
 }
 
+.paypal {
+	width:20%;
+	margin-top:20px;
+	margin-left:40%;
+}
+
 /* YouTube player */
 #ytplayer {	margin-left:calc((100% - 640px) / 2);}
 .ytsubscribe {float:right;}

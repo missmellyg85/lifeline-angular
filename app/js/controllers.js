@@ -14,7 +14,7 @@ myAppControllers.controller('Lifeline', ['$scope', '$routeParams', '$location',
             phone: '660-665-5688',
             fax: '660-665-9497',
             email: 'LifelinePRC@sbcglobal.net',
-            supporterUrl: 'http://friendsoflifelinephc.org/',
+            supporterUrl: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YU4ZL2SKUKCDU',
             supportButton: 'partials/lifeline/lifeline-support.html'
             };
     }]);
