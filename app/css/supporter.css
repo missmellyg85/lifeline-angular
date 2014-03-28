@@ -132,6 +132,17 @@ div.s_navigation {
 	-webkit-transition: opacity .1s ease-in;
 }
 
+.event {
+	margin-bottom:40px;
+}
+
+.event .walk h3 {text-decoration: underline;}
+.event .walk {margin-left:50px;}
+.event .walk img {
+	width:400px;
+	margin-right:10px;
+}
+
 #supporter .address-block{
 	margin:0 60px;
 	font-weight: bold;
