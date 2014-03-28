@@ -1,5 +1,5 @@
 body#supporter{
-	background-image: url("../img/supporter/background.jpg");
+	background-image: url("../img/supporter/background2.jpg");
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-color: #f7fbf2;
@@ -38,14 +38,15 @@ div.s_navigation {
 	font-size: 18px;
 	position: relative;
 	z-index: 10;
+	font-weight: bold;
 }
 
 .s_navigation a, .s_navigation a:visited {
-	color: #fff;
+	color: #2D2D2D;
 }
 
 .s_navigation a:hover {
-	color: #ccc;
+	color: #666;
 }
 
 .s_navigation > div {
@@ -53,21 +54,21 @@ div.s_navigation {
 	vertical-align: top;
 	width:20%;
 	text-align: center;
-	color:#fff;
+	color:#2D2D2D;
 }
 
 .s_navigation > div span.drop {
 	display: none;
 	padding:5px 0;
 	font-size: 16px;
-	background-color: #2D2D2D;
+	background-color: #94CB50; /*#2D2D2D;*/
 }
 
 .s_navigation > div:hover > span.drop {
 	display: block;
 }
 
-.s_navigation > div:hover > span:first-of-type {
+.s_navigation > div:hover > span:nth-of-type(2) {
 	padding-top:10px;
 }
 
