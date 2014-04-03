@@ -77,7 +77,7 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
     $scope.submitForm = function() {
         $scope.submitted = true;
         if ($scope.appointmentForm.$valid) {
-            $http.post('process.php', $scope.appointment)
+            $http.post('process.php?type=appointment', $scope.appointment)
                 .success(function(data) {
                     if (data.errors) {
                         $scope.errors = [];
@@ -102,8 +102,8 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
 
 }]);
 
-myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
-  function($scope, $routeParams, $location) {
+myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location', '$http',
+  function($scope, $routeParams, $location, $http) {
     $scope.navigation = "partials/supporter/supporter-navigation.html";
 
     $scope.allowDisplay = false;
@@ -133,28 +133,30 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
     }
     $scope.submitRegForm = function() {
         console.log("Submit reg form");
-        // $scope.submitted = true;
-        // if ($scope.walkRegistrationForm.$valid) {
-        //     $http.post('process.php', $scope.reg)
-        //         .success(function(data) {
-        //             if (data.errors) {
-        //                 $scope.errors = [];
-        //                 for(var error in data.errors) {
-        //                     $scope.errors[error] = true;
-        //                 }
-        //             } else if(data.error) {
-        //                 $scope.error = data.error;
-        //             } else {
-        //                 // if successful, bind success message to message and set form to pristine
-        //                 $scope.message = data.message;
-        //                 $scope.walkRegistrationForm.$setPristine();
-        //                 $scope.submitted = false;
-        //                 $scope.reg = {};
-        //             }
-        //         })
-        //         .error(function(data) {
-                    
-        //         });
-        // };
+        $scope.submitted = true;
+        console.log($scope.reg);
+        if(true /*$scope.regForm.$valid*/) {
+            $http.post("process.php?type=reg", $scope.reg)
+                .success(function(data) {
+                    if(data.errors){
+                        $scope.errors = [];
+                        for(var error in data.erorrs) {
+                            $scope.errors[error] = true;
+                        }
+                    } else if(data.error) {
+                        $scope.error = data.error;
+                    } else {
+                        //if successful all the way, bind success message to message and set
+                        //for to pristine
+                        $scope.message = data.message;
+                        $scope.regForm.$setPristine();
+                        $scope.submitted = false;
+                        $scope.reg = {};
+                    }
+                })
+                .error(function(data) {
+                    $scope.message = "There was a big error!!";
+                });
+        };
     };
   }]);

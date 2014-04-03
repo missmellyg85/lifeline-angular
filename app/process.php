@@ -1,45 +1,57 @@
 <?php
 
-$errors = array();  	// array to hold validation errors
-$data = array(); 		// array to pass back data
-
+$type = $_GET['type'];
 $pdata = json_decode(file_get_contents('php://input'), true);
 
-// validate the variables ======================================================
-if (empty($pdata['name']))
-        $errors['name'] = 'Name is required.';
+// check type to process ==
+switch($type) {
+    case "reg":
+        $rdata = process_registration($pdata);
+        break;
+    case "appointment":
+        $rdata = process_appointment($pdata);
+        break;
+    default:
+        return false;
+}
+// return all our data to an AJAX call
+echo json_encode($rdata);
 
-if (empty($pdata['email']))
-        $errors['email'] = 'Email is required.';
+// ===== FUNCTIONS ===== //
+function process_appointment($pdata) {
+    $errors = array();
+    $data = array();
 
-if (empty($pdata['dob']))
-        $errors['dob'] = 'Date of Birth is required.';
+    // validate the variables
+    if (empty($pdata['name']))
+            $errors['name'] = 'Name is required.';
 
-// return a response ===========================================================
+    if (empty($pdata['email']))
+            $errors['email'] = 'Email is required.';
 
-// response if there are errors
-if ( ! empty($errors)) {
+    if (empty($pdata['dob']))
+            $errors['dob'] = 'Date of Birth is required.';
 
-    // if there are items in our errors array, return those errors
-    $data['success'] = false;
-    $data['errors']  = $errors;
-} else {
-    // create and send off email
-    if(sendAppointmentRequest($pdata)){
-        // if the email sent and there are no errors, return a message
-        $data['success'] = true;
-        $data['message'] = 'Request has been submitted! You will be contacted soon to confirm an appointment date.';
-    } else {
-        // if the email could not send, return a message
+    // response if there are errors
+    if (!empty($errors)) {
+        // if there are items in our errors array, return those errors
         $data['success'] = false;
-        $data['error'] = 'Request could not be sent';
+        $data['errors']  = $errors;
+    } else {
+        // create and send off email
+        if(sendAppointmentRequest($pdata)){
+            // if the email sent and there are no errors, return a message
+            $data['success'] = true;
+            $data['message'] = 'Request has been submitted! You will be contacted soon to confirm an appointment date.';
+        } else {
+            // if the email could not send, return a message
+            $data['success'] = false;
+            $data['error'] = 'Request could not be sent';
+        }
     }
     
-    
+    return $data;
 }
-
-// return all our data to an AJAX call
-echo json_encode($data);
 
 function sendAppointmentRequest($posted){
 
@@ -61,10 +73,80 @@ function sendAppointmentRequest($posted){
 
     $additional_headers = 'From: New Appointment Request <donotreply@lifeline.com>';
     
-    /* Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
+    // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
     if (mail($to_email,$subject,$message, $additional_headers)) {
       return true;
     } else {
       return false;
     }
+}
+
+function process_registration($pdata) {
+    $errors = array();
+    $data = array();
+
+    // validate the variables
+    
+
+    // response if there are errors
+    if (!empty($errors)) {
+        // if there are items in our errors array, return those errors
+        $data['success'] = false;
+        $data['errors']  = $errors;
+    } else {
+        // create and send off email
+        if(sendRegistration($pdata)){
+            // if the email sent and there are no errors, return a message
+            $data['success'] = true;
+            $data['message'] = 'Request has been submitted! You will be contacted soon to confirm an appointment date.';
+        } else {
+            // if the email could not send, return a message
+            $data['success'] = false;
+            $data['error'] = 'Request could not be sent';
+        }
+    }
+    
+    return $data;
+}
+
+function sendRegistration($posted){
+
+    /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
+    //$to_email = "lifelineprc@sbcglobal.net";
+    $to_email = "missywilliams85@gmail.com";
+    
+    
+    $subject = "New Walk for Life 2014 Registration";
+    
+    $message = "A new registration has been submitted through the website.\n\n";
+
+    if(array_key_exists("teammate", $posted)){
+        $pop = $posted['teammate'];
+        unset($posted["teammate"]);
+        array_push($posted, $pop);
+    }
+
+    foreach($posted as $key => $value){
+        if($key == "teammate") {
+            $message .= "Team members:\n";
+            foreach ($value as $k => $t) {
+                $message .= "".$t['fname'].' '.$t['lname']."\n";
+            }
+            $message .= "\n";
+        } else {
+            $message .= "".ucfirst($key).": ".$value."\n\n";
+        }
+    }
+
+    $additional_headers = 'From: New Walk for Life 2014 Registration <donotreply@lifeline.com>';
+    
+    echo $message;
+
+    // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
+    /*if (mail($to_email,$subject,$message, $additional_headers)) {
+      return true;
+    } else {
+      return false;
+    }*/
+    return true;
 }

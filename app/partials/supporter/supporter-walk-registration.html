@@ -1,5 +1,6 @@
 <h3>Registration for Walk for Life 2014:</h3>
-<form name="walkRegistrationForm" class="contact-form css-form" ng-submit="submitRegForm()" novalidate>
+<h2>{{message}}</h2>
+<form name="regForm" ng-controller="Supporter" class="contact-form css-form" ng-submit="submitRegForm()" novalidate>
 	<div class="form-group">
         I want to register as:
         <label><input type="radio" name="individual" ng-model="reg.type" value="individual" ng-click="clearTeammates()" />Individual</label>
@@ -9,21 +10,21 @@
         <label>First Name*:</label>
         <input type="text" name="fname" class="form-control" ng-model="reg.fname" required />
         <div>
-            <span ng-show="(walkRegistrationForm.fname.$invalid && submitted) || (errors.fname)" class="error inline">Your first name is required</span>
+            <span ng-show="(regForm.fname.$invalid && submitted) || (errors.fname)" class="error inline">Your first name is required</span>
         </div>
     </div>
     <div>
         <label>Last Name*:</label>
         <input type="text" name="lname" class="form-control" ng-model="reg.lname" required />
         <div>
-            <span ng-show="(walkRegistrationForm.lname.$invalid && submitted) || (errors.lname)" class="error inline">Your last name is required</span>
+            <span ng-show="(regForm.lname.$invalid && submitted) || (errors.lname)" class="error inline">Your last name is required</span>
         </div>
     </div>
     <div>
         <label>Address 1*:</label>
         <input type="text" name="address1" class="form-control" ng-model="reg.address1" required />
         <div>
-            <span ng-show="(walkRegistrationForm.address1.$invalid && submitted) || (errors.address1)" class="error inline">Your address is required</span>
+            <span ng-show="(regForm.address1.$invalid && submitted) || (errors.address1)" class="error inline">Your address is required</span>
         </div>
     </div>
     <div class="form-group">
@@ -34,28 +35,28 @@
         <label>City*:</label>
         <input type="text" name="city" class="form-control" ng-model="reg.city" required />
         <div>
-            <span ng-show="(walkRegistrationForm.city.$invalid && submitted) || (errors.city)" class="error inline">Your city is required</span>
+            <span ng-show="(regForm.city.$invalid && submitted) || (errors.city)" class="error inline">Your city is required</span>
         </div>
     </div>
     <div>
         <label>State*:</label>
         <input type="text" name="state" class="form-control" ng-model="reg.state" required />
         <div>
-            <span ng-show="(walkRegistrationForm.state.$invalid && submitted) || (errors.state)" class="error inline">Your state is required</span>
+            <span ng-show="(regForm.state.$invalid && submitted) || (errors.state)" class="error inline">Your state is required</span>
         </div>
     </div>
     <div>
         <label>Zip Code*:</label>
         <input type="text" name="zip" class="form-control" ng-model="reg.zip" required />
         <div>
-            <span ng-show="(walkRegistrationForm.zip.$invalid && submitted) || (errors.zip)" class="error inline">Your zip code is required</span>
+            <span ng-show="(regForm.zip.$invalid && submitted) || (errors.zip)" class="error inline">Your zip code is required</span>
         </div>
     </div>
     <div>
         <label>Daytime Phone*:</label>
         <input type="text" name="phone" class="form-control" ng-model="reg.phone" required />
         <div>
-            <span ng-show="(walkRegistrationForm.phone.$invalid && submitted) || (errors.phone)" class="error inline">Your phone number is required</span>
+            <span ng-show="(regForm.phone.$invalid && submitted) || (errors.phone)" class="error inline">Your phone number is required</span>
         </div>
     </div>
     <div class="form-group">
@@ -85,41 +86,3 @@
     </div>
 </form>
 {{reg}}
-
-<!-- <form name="appointmentForm" class="contact-form css-form" ng-submit="submitForm()" novalidate>
-    <div>
-        <label>Name*:</label>
-        <input type="text" name="name" class="form-control" ng-model="appointment.name" required />
-        <div>
-            <span ng-show="(appointmentForm.name.$invalid && submitted) || (errors.name)" class="error inline">Your name is required</span>
-        </div>
-    </div>
-    <div>
-        <label>Email*:</label>
-        <input type="email" name="email" class="form-control" ng-model="appointment.email" required />
-        <div>
-            <span ng-show="appointmentForm.email.$pristine && submitted" class="error inline">Your email is required</span>
-            <span ng-show="appointmentForm.email.$invalid && appointmentForm.email.$dirty && submitted" class="error inline">Please enter a valid email</span>
-        </div>
-    </div>
-    <div>
-        <label>Date of Birth*:</label>
-        <input type="text" name="dob" class="form-control" ng-model="appointment.dob" ng-pattern="/^\d{1,2}\/\d{1,2}\/\d{2,4}$/" required />
-        <div>
-            <span ng-show="appointmentForm.dob.$pristine && submitted" class="error inline">Your date of birth is required</span>
-            <span ng-show="appointmentForm.dob.$invalid && appointmentForm.dob.$dirty && submitted" class="error inline">Please enter date in format MM/DD/YYYY</span>
-        </div>
-    </div>
-    <div class="form-group">
-        Have you been to Lifeline before?
-        <label><input type="radio" name="visited-before" ng-model="appointment.previous" value="true" />Yes</label>
-        <label><input type="radio" name="visited-before" ng-model="appointment.previous" value="false" />No</label>
-    </div>
-    <div class="form-group">
-        Requested service:
-        <select ng-model="appointment.service" class="form-control" ng-options="s.service for s in appointmentServices"></select>
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-</form> -->
