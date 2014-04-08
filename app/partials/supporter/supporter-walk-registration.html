@@ -1,9 +1,9 @@
 <h3>Registration for Walk for Life 2014:</h3>
-<h2>{{message}}</h2>
+<h3 class="success" ng-controller="Supporter">{{message}}</h3>
 <form name="regForm" ng-controller="Supporter" class="contact-form css-form" ng-submit="submitRegForm()" novalidate>
 	<div class="form-group">
         I want to register as:
-        <label><input type="radio" name="individual" ng-model="reg.type" value="individual" ng-click="clearTeammates()" />Individual</label>
+        <label><input type="radio" name="individual" ng-model="reg.type" value="individual" ng-click="clearTeammates()" checked="checked"/>Individual</label>
         <label><input type="radio" name="team" ng-model="reg.type" value="team" ng-click="initiateTeammates()" />Team of 4</label>
     </div>
     <div>
@@ -81,8 +81,8 @@
     	<label>Team Name:</label>
         <input type="text" name="teamname" class="form-control" ng-model="reg.teamname" />
     </div>
-	<div>
+	<div class="inline">
         <button type="submit">Submit</button>
-    </div>
+    </div><span class="error inline" ng-show="submitted && regForm.$invalid">Please correct errors</span>
+    <h3 class="success">{{message}}</h3>
 </form>
-{{reg}}

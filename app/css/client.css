@@ -61,7 +61,7 @@ ul.rslides {
 
 .content .index-address ul {list-style-type: none; padding:0;margin-left:55px;}
 
-.appointment-request .success {color:green;}
+form .success {color:green;}
 
 .contact-form .form-control {
 	display: block;

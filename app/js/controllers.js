@@ -123,6 +123,7 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
     };
 
     $scope.reg = {};
+    $scope.reg.type="individual";
     $scope.initiateTeammates = function() {
         $scope.reg.teammate = [{}, {}, {}];    
     }
@@ -135,19 +136,23 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
         console.log("Submit reg form");
         $scope.submitted = true;
         console.log($scope.reg);
-        if(true /*$scope.regForm.$valid*/) {
+        if($scope.regForm.$valid) {
             $http.post("process.php?type=reg", $scope.reg)
                 .success(function(data) {
                     if(data.errors){
+                        console.log('success but with errors');
                         $scope.errors = [];
                         for(var error in data.erorrs) {
                             $scope.errors[error] = true;
                         }
                     } else if(data.error) {
+                        console.log('success but with an error');
                         $scope.error = data.error;
                     } else {
+                        console.log('success');
                         //if successful all the way, bind success message to message and set
                         //for to pristine
+                        $scope.showReg = false;
                         $scope.message = data.message;
                         $scope.regForm.$setPristine();
                         $scope.submitted = false;

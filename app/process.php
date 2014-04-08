@@ -98,11 +98,11 @@ function process_registration($pdata) {
         if(sendRegistration($pdata)){
             // if the email sent and there are no errors, return a message
             $data['success'] = true;
-            $data['message'] = 'Request has been submitted! You will be contacted soon to confirm an appointment date.';
+            $data['message'] = 'The form has been submitted! You will be contacted soon to confirm your registration.';
         } else {
             // if the email could not send, return a message
             $data['success'] = false;
-            $data['error'] = 'Request could not be sent';
+            $data['error'] = 'Request could not be sent. Please try again or contact us directly.';
         }
     }
     
@@ -138,15 +138,14 @@ function sendRegistration($posted){
         }
     }
 
+    $message .= "\n\nPlease contact this registrant to confirm their registration.";
+
     $additional_headers = 'From: New Walk for Life 2014 Registration <donotreply@lifeline.com>';
-    
-    echo $message;
 
     // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
-    /*if (mail($to_email,$subject,$message, $additional_headers)) {
+    if (mail($to_email,$subject,$message, $additional_headers)) {
       return true;
     } else {
       return false;
-    }*/
-    return true;
+    }
 }
