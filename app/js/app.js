@@ -36,4 +36,9 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/supporter-new-projects', {templateUrl: 'partials/supporter/supporter-new-projects.html', controller: 'Supporter'});
   
   $routeProvider.otherwise({redirectTo: '/client-index'});
+}])
+.run(['$location', '$rootScope', function($location, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        $rootScope.title = current.$$route.title;
+    });
 }]);
