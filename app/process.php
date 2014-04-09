@@ -126,6 +126,12 @@ function sendRegistration($posted){
         array_push($posted, $pop);
     }
 
+    $full_name = $posted['fname']." ".$posted['lname']."\n\n";
+    unset($posted['fname']);
+    unset($posted['lname']);
+
+    $message .= "Name: ".$full_name;
+
     foreach($posted as $key => $value){
         if($key == "teammate") {
             $message .= "Team members:\n";
