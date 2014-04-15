@@ -67,7 +67,7 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
     
     $scope.serviceIconClick = function(service) {
         if (!$scope.allowDisplay) {
-            var newPath = '/client-services/'+service;
+            var newPath = '/services/'+service;
             $location.path(newPath);
         }
         $scope.service = servicePrefix+service;

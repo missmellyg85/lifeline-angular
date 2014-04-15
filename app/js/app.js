@@ -10,15 +10,15 @@ angular.module('myApp', [
   'myAppControllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/client-index', {templateUrl: 'partials/client/client-index.html', controller: 'Client'});
-  $routeProvider.when('/client-services/', {templateUrl: 'partials/client/client-services.html', controller: 'Client'});
-  $routeProvider.when('/client-services/:service', {templateUrl: 'partials/client/client-services.html', controller: 'Client'});
+  $routeProvider.when('/index', {templateUrl: 'partials/client/client-index.html', controller: 'Client'});
+  $routeProvider.when('/services/', {templateUrl: 'partials/client/client-services.html', controller: 'Client'});
+  $routeProvider.when('/services/:service', {templateUrl: 'partials/client/client-services.html', controller: 'Client'});
   
   $routeProvider.when('/lifeline-services-icons', {templateUrl: 'partials/lifeline/lifelinfe-services-icons.html', controller: 'Lifeline'});
   
-  $routeProvider.when('/client-stories', {templateUrl: 'partials/client/client-stories.html', controller: 'Client'});
-  $routeProvider.when('/client-about', {templateUrl: 'partials/client/client-about.html', controller: 'Client'});
-  $routeProvider.when('/client-contact', {templateUrl: 'partials/client/client-contact.html', controller: 'Client'});
+  $routeProvider.when('/stories', {templateUrl: 'partials/client/client-stories.html', controller: 'Client'});
+  $routeProvider.when('/about', {templateUrl: 'partials/client/client-about.html', controller: 'Client'});
+  $routeProvider.when('/contact', {templateUrl: 'partials/client/client-contact.html', controller: 'Client'});
 
   $routeProvider.when('/supporter-index', {templateUrl: 'partials/supporter/supporter-index.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-get-involved', {templateUrl: 'partials/supporter/supporter-get-involved.html', controller: 'Supporter'});
@@ -35,7 +35,7 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/supporter-events', {templateUrl: 'partials/supporter/supporter-events.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-new-projects', {templateUrl: 'partials/supporter/supporter-new-projects.html', controller: 'Supporter'});
   
-  $routeProvider.otherwise({redirectTo: '/client-index'});
+  $routeProvider.otherwise({redirectTo: '/index'});
 }])
 .run(['$location', '$rootScope', function($location, $rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {

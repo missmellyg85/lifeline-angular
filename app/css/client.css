@@ -61,7 +61,7 @@ ul.rslides {
 
 .content .index-address ul {list-style-type: none; padding:0;margin-left:55px;}
 
-form .success {color:green;}
+form .success, h3.success {color:green;}
 
 .contact-form .form-control {
 	display: block;
