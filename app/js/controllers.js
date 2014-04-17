@@ -160,7 +160,7 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
                     }
                 })
                 .error(function(data) {
-                    $scope.message = "There was a big error!!";
+                    $scope.message = "There was an error processing the request.";
                 });
         };
     };

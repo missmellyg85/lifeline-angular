@@ -155,3 +155,4 @@ function sendRegistration($posted){
       return false;
     }
 }
+?>

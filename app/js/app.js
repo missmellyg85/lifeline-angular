@@ -20,6 +20,8 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/about', {templateUrl: 'partials/client/client-about.html', controller: 'Client'});
   $routeProvider.when('/contact', {templateUrl: 'partials/client/client-contact.html', controller: 'Client'});
 
+  $routeProvider.when('/contact2', {templateUrl: 'partials/client/client-contact2.html', controller: 'Client'});
+
   $routeProvider.when('/supporter-index', {templateUrl: 'partials/supporter/supporter-index.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-get-involved', {templateUrl: 'partials/supporter/supporter-get-involved.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-team', {templateUrl: 'partials/supporter/supporter-team.html', controller: 'Supporter'});
