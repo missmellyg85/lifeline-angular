@@ -142,7 +142,12 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
         $scope.submitted = true;
         console.log($scope.reg);
         if($scope.regForm.$valid) {
-            $http.post("process.php?type=reg", $scope.reg)
+            $http({
+                url: "process.php?type=reg",
+                    method: "POST",
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    data: $.param($scope.reg)
+                })
                 .success(function(data) {
                     if(data.errors){
                         console.log('success but with errors');

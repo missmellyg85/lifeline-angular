@@ -60,7 +60,7 @@ function sendAppointmentRequest($posted){
 
     /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
     //$to_email = "lifelineprc@sbcglobal.net";
-    $to_email = "missywilliams85@gmail.com";
+    $to_email = "lifelineprc@sbcglobal.net";
     
     
     $subject = "New Appointment Request";
@@ -116,7 +116,7 @@ function sendRegistration($posted){
 
     /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
     //$to_email = "lifelineprc@sbcglobal.net";
-    $to_email = "missywilliams85@gmail.com";
+    $to_email = "lifelineprc@sbcglobal.net";
     
     
     $subject = "New Walk for Life 2014 Registration";
