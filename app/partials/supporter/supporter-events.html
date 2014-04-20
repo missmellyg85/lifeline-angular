@@ -1,0 +1,37 @@
+<div ng-include="navigation"></div>
+<div>
+	<h1>Events</h1>
+	<div>
+		<p>Our fundraising events take place three times throughout the year, providing a variety of ways to give and get involved in Lifeline's ministry.</p>
+
+		<div class="event">
+			<h3>Baby Bottle Blessing</h3>
+			<p>We kick-off our Baby Bottle Blessing campaign on Sanctity of Human Life Sunday every year in January.  Churches and individuals who choose to participate fill up baby bottles with spare change and return the bottles in February in honor of the Sanctity of Human Life that Lifeline works to uphold.</p>
+		</div>
+
+		<div class="event">
+			<h3>Walk for Life</h3>
+			<p>Near the end of Spring, we hold our annual Walk for Life, inviting our community members to raise pledges for a 2-mile fun walk.  The sidewalks are full of families and friends who are "walking the walk" in showing their support for Lifeline's work in caring for those facing unexpected pregnancy.</p>
+			<div class="walk">
+				<h3 class="underline">2014 Walk for Life</h3>
+				<div class="inline">
+					<img src="../img/supporter/WalkForLife2014Shirt.gif">
+				</div><div class="indent well half-width inline valign-top">
+					<div>
+						<p><b>Saturday, June 7th, 2014</b><br>
+						Location: Baptist Student Union, 110 Normal Street<br>
+						Time: 10:00 Registration, 10:30 Walk begins</p>
+						<p><a href="../img/supporter/ImagineLifeBrochure2014.pdf" target="_blank" class="underline">Download Flyer</a></p>
+						<span class="btn" ng-click="showReg = !showReg">{{(showReg)?'Hide Registration':'Register'}}</span>
+					</div>
+					<div ng-show="showReg" ng-include="'partials/supporter/supporter-walk-registration.html'"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="event">
+			<h3>Fundraising Banquet</h3>
+			<p>Each Fall, Lifeline hosts our annual Fundraising Banquet, featuring challenging and encouraging speakers from across the country.  It is a time for reflecting on all God has done at Lifeline throughout the previous year, as well as a time for looking ahead to how we can join with God for the work the lies ahead in the year to come.</p>
+		</div>
+	</div>
+</div>
