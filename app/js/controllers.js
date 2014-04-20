@@ -77,7 +77,12 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
     $scope.submitForm = function() {
         $scope.submitted = true;
         if ($scope.appointmentForm.$valid) {
-            $http.post('process.php?type=appointment', $scope.appointment)
+            $http({
+                url: "process.php?type=appointment",
+                    method: "POST",
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    data: $.param($scope.appointment)
+                })
                 .success(function(data) {
                     if (data.errors) {
                         $scope.errors = [];

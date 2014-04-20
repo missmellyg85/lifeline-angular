@@ -1,7 +1,10 @@
+<html>
+<head><title>PHP Mail Sender</title></head>
+<body>
 <?php
 
 $type = $_GET['type'];
-$pdata = json_decode(file_get_contents('php://input'), true);
+$pdata = $_POST;
 
 // check type to process ==
 switch($type) {
@@ -71,10 +74,10 @@ function sendAppointmentRequest($posted){
     $message .= "\n\nWould prefer to visit on a ".$posted['day']['day']." at a preferred time of ".$posted['time']['time'];
     $message .= "\n\nType of visit: ".$posted['service']['service'];
 
-    $additional_headers = 'From: New Appointment Request <donotreply@lifeline.com>';
+    //$additional_headers = 'From: New Appointment Request <donotreply@lifeline.com>';
     
     // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
-    if (mail($to_email,$subject,$message, $additional_headers)) {
+    if (mail($to_email,$subject,$message)) {
       return true;
     } else {
       return false;
@@ -146,13 +149,15 @@ function sendRegistration($posted){
 
     $message .= "\n\nPlease contact this registrant to confirm their registration.";
 
-    $additional_headers = 'From: New Walk for Life 2014 Registration <donotreply@lifeline.com>';
+    //$additional_headers = 'From: New Walk for Life 2014 Registration <donotreply@lifeline.com>';
 
     // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
-    if (mail($to_email,$subject,$message, $additional_headers)) {
+    if (mail($to_email,$subject,$message)) {
       return true;
     } else {
       return false;
     }
 }
 ?>
+</body>
+</html>
