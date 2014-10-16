@@ -8,7 +8,7 @@ myAppControllers.controller('Lifeline', ['$scope', '$routeParams', '$location',
     function($scope, $routeParams, $location) {
         $scope.info = {
             name: 'Lifeline Pregnancy Help Clinic',
-            street: '306 W. Washington Street',
+            street: '1515 N. New Street',
             citystate: 'Kirksville, MO',
             zip: '63501',
             phone: '660-665-5688',
@@ -29,7 +29,7 @@ myAppControllers.controller('MainCtrl', ['$scope', '$route', '$routeParams', '$l
 
 myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$http',
   function($scope, $routeParams, $location, $http) {
-    $scope.navigation = "partials/client/client-navigation.html";
+    $scope.navigation = "partials/client/client-nav.html";
     
     $scope.appointmentDays = [
         {day: 'Monday'},
@@ -109,7 +109,7 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
 
 myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location', '$http',
   function($scope, $routeParams, $location, $http) {
-    $scope.navigation = "partials/supporter/supporter-navigation.html";
+    $scope.navigation = "partials/supporter/supporter-nav.html";
 
     $scope.allowDisplay = false;
     $scope.assignDisplayAllowance = function() {
