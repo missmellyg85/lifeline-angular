@@ -30,6 +30,7 @@ config(['$routeProvider', function($routeProvider) {
   
   $routeProvider.when('/supporter-about', {templateUrl: 'partials/supporter/supporter-about.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-donate', {templateUrl: 'partials/supporter/supporter-donate.html', controller: 'Supporter'});
+  $routeProvider.when('/taxCredits', {templateUrl: 'partials/supporter/taxCredits.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-contact', {templateUrl: 'partials/supporter/supporter-contact.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-stories', {templateUrl: 'partials/supporter/supporter-stories.html', controller: 'Supporter'});
   $routeProvider.when('/supporter-videos', {templateUrl: 'partials/supporter/supporter-videos.html', controller: 'Supporter'});

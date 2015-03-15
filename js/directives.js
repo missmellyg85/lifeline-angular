@@ -20,7 +20,7 @@ angular.module('myApp.directives', [])
     return {
       restrict: 'A',
       link: function(scope,element,attrs) {
-        element.append('<div class="footer well">Copyright &#169; 2013 - The content of this website is copyright of Lifeline Pregnancy Help Clinic and may not be copied without permission. </div>');
+        element.append('<div class="footer well">Copyright &#169; 2015 - The content of this website is copyright of Lifeline Pregnancy Help Clinic and may not be copied without permission. </div>');
       }
     }
   })
