@@ -1,0 +1,41 @@
+<h3>Registration for Walk for Life 2015:</h3>
+<h3 class="success" ng-controller="Supporter">{{message}}</h3>
+<form name="volunteerForm" ng-controller="Supporter" class="contact-form css-form" ng-submit="submitInterestForm()" novalidate>
+    <div>
+        <label>Name*:</label>
+        <input type="text" name="name" class="form-control" ng-model="volunteer.name" required />
+        <div>
+            <span ng-show="(volunteerForm.name.$invalid && submitted) || (errors.name)" class="error inline">Your name is required</span>
+        </div>
+    </div>
+   
+    <div>
+        <label>Address*:</label>
+        <input type="text" name="address" class="form-control" ng-model="volunteer.address" required />
+        <div>
+            <span ng-show="(volunteerForm.address.$invalid && submitted) || (errors.address)" class="error inline">Your address is required</span>
+        </div>
+    </div>
+    
+    <div>
+        <label>Phone*:</label>
+        <input type="text" name="phone" class="form-control" ng-model="volunteer.phone" required />
+        <div>
+            <span ng-show="(volunteerForm.phone.$invalid && submitted) || (errors.phone)" class="error inline">Your phone number is required</span>
+        </div>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" class="form-control" ng-model="volunteer.email" />
+    </div>
+    <p>I am interested in volunteering for:
+    <select class="form-control">
+		  <option>Peer Counselor</option>
+		  <option>DadLINE Mentor</option>
+		  <option>Special Projects Only</option>
+		</select>
+	<div class="inline">
+        <button type="submit">Submit</button>
+    </div><span class="error inline" ng-show="submitted && volunteerForm.$invalid">Please correct errors</span>
+    <h3 class="success">{{message}}</h3>
+</form>

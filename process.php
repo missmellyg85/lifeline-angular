@@ -115,11 +115,12 @@ function process_registration($pdata) {
 function sendRegistration($posted){
 
     /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
-    //$to_email = "lifelineprc@sbcglobal.net";
-    $to_email = "lifelineprc@sbcglobal.net";
+    // $to_email = "lifelineprc@sbcglobal.net";
+
+    $to_email = "missywilliams85@gmail.com";
     
     
-    $subject = "New Walk for Life 2014 Registration";
+    $subject = "New Walk for Life 2015 Registration";
     
     $message = "A new registration has been submitted through the website.\n\n";
 

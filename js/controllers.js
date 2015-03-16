@@ -140,40 +140,48 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
         }
     }
     $scope.submitRegForm = function() {
-        console.log("Submit reg form");
         $scope.submitted = true;
-        console.log($scope.reg);
         if($scope.regForm.$valid) {
             $http({
                 url: "process.php?type=reg",
-                    method: "POST",
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    data: $.param($scope.reg)
-                })
-                .success(function(data) {
-                    if(data.errors){
-                        console.log('success but with errors');
-                        $scope.errors = [];
-                        for(var error in data.erorrs) {
-                            $scope.errors[error] = true;
-                        }
-                    } else if(data.error) {
-                        console.log('success but with an error');
-                        $scope.error = data.error;
-                    } else {
-                        console.log('success');
-                        //if successful all the way, bind success message to message and set
-                        //for to pristine
-                        $scope.showReg = false;
-                        $scope.message = data.message;
-                        $scope.regForm.$setPristine();
-                        $scope.submitted = false;
-                        $scope.reg = {};
+                method: "POST",
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $.param($scope.reg)
+                // data: parameterize($scope.reg)
+            })
+            .success(function(data) {
+                console.log("success and data:");
+                console.log(data);
+                if(data.errors){
+                    $scope.errors = [];
+                    for(var error in data.erorrs) {
+                        $scope.errors[error] = true;
                     }
-                })
-                .error(function(data) {
-                    $scope.message = "There was an error processing the request.";
-                });
+                } else if(data.error) {
+                    $scope.error = data.error;
+                } else {
+                    //if successful all the way, bind success message to message and set
+                    //for to pristine
+                    $scope.showReg = false;
+                    $scope.message = data.message;
+                    $scope.regForm.$setPristine();
+                    $scope.submitted = false;
+                    $scope.reg = {};
+                }
+            })
+            .error(function(data) {
+                console.log("error and data:");
+                console.log(data);
+                $scope.message = "There was an error processing the request.";
+            });
         };
     };
+
+    function parameterize(obj) {
+        var str = [];
+        for(var p in obj)
+        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+        return str.join("&");
+    }
+
   }]);
