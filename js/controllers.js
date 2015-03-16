@@ -25,14 +25,14 @@ myAppControllers.controller('MainCtrl', ['$scope', '$route', '$routeParams', '$l
     function($scope, $route, $routeParams, $location) {
         $scope.$route = $route;
         $scope.$location = $location;
-        $scope.$routeParams = $routeParams; 
-        $scope.current = $location.path(); 
+        $scope.$routeParams = $routeParams;
+        $scope.current = $location.path();
     }]);
 
 myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$http',
   function($scope, $routeParams, $location, $http) {
     $scope.navigation = "partials/client/client-nav.html";
-    
+
     $scope.appointmentDays = [
         {day: 'Monday'},
         {day: 'Tuesday'},
@@ -48,11 +48,11 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
         {time: '5:00pm (Thursday only)'}
     ];
     $scope.appointmentServices = [
-        {service: 'Pregnancy Test'},    
-        {service: 'Ultrasound'},    
-        {service: 'Other Service'}    
+        {service: 'Pregnancy Test'},
+        {service: 'Ultrasound'},
+        {service: 'Other Service'}
     ];
-    
+
     $scope.validation = [
         {"regex": [
             {"dob": "/^\d{1,2}\/\d{1,2}\/\d{2,4}$/"}
@@ -63,10 +63,10 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
     $scope.assignDisplayAllowance = function() {
         $scope.allowDisplay = true;
     };
-    
+
     var servicePrefix = "partials/lifeline/services/";
     $scope.service = (($routeParams.service != null)?servicePrefix+$routeParams.service:null);
-    
+
     $scope.serviceIconClick = function(service) {
         if (!$scope.allowDisplay) {
             var newPath = '/services/'+service;
@@ -74,7 +74,7 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
         }
         $scope.service = servicePrefix+service;
     };
-    
+
     $scope.appointment = {};
     $scope.submitForm = function() {
         $scope.submitted = true;
@@ -83,7 +83,7 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
                 url: "process.php?type=appointment",
                     method: "POST",
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    data: $.param($scope.appointment)
+                    data: 'formData=' + JSON.stringify($scope.appointment)
                 })
                 .success(function(data) {
                     if (data.errors) {
@@ -102,7 +102,7 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
                     }
                 })
                 .error(function(data) {
-                    
+
                 });
         };
     };
@@ -132,7 +132,7 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
     $scope.reg = {};
     $scope.reg.type="individual";
     $scope.initiateTeammates = function() {
-        $scope.reg.teammate = [{}, {}, {}];    
+        $scope.reg.teammate = [{}, {}, {}];
     }
     $scope.clearTeammates = function() {
         if($scope.reg.teammate){
@@ -148,7 +148,7 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
                 url: "process.php?type=reg",
                     method: "POST",
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    data: $.param($scope.reg)
+                    data: 'formData=' + JSON.stringify($scope.reg)
                 })
                 .success(function(data) {
                     if(data.errors){
