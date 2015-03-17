@@ -1,10 +1,8 @@
-<html>
-<head><title>PHP Mail Sender</title></head>
-<body>
 <?php
 
 $type = $_GET['type'];
-$pdata = $_POST;
+$toAssocArray = true;
+$pdata = json_decode($_POST["formData"], $toAssocArray);
 
 // check type to process ==
 switch($type) {
@@ -52,7 +50,7 @@ function process_appointment($pdata) {
             $data['error'] = 'Request could not be sent';
         }
     }
-    
+
     return $data;
 }
 
@@ -61,21 +59,21 @@ function sendAppointmentRequest($posted){
     /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
     //$to_email = "lifelineprc@sbcglobal.net";
     $to_email = "lifelineprc@sbcglobal.net";
-    
-    
+
+
     $subject = "New Appointment Request";
-    
+
     $message = "A new appointment request has been submitted through the website.\n\n";
     $message .= "Name: ".$posted['name'];
     $message .= "\nEmail: ".$posted['email'];
     $message .= "\nDOB: ".$posted['dob'];
     $message .= "\n\nHas visisted Lifeline before: ".(($posted['previous'])?"Yes":"No");
-    
+
     $message .= "\n\nWould prefer to visit on a ".$posted['day']['day']." at a preferred time of ".$posted['time']['time'];
     $message .= "\n\nType of visit: ".$posted['service']['service'];
 
     //$additional_headers = 'From: New Appointment Request <donotreply@lifeline.com>';
-    
+
     // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
     if (mail($to_email,$subject,$message)) {
       return true;
@@ -89,7 +87,7 @@ function process_registration($pdata) {
     $data = array();
 
     // validate the variables
-    
+
 
     // response if there are errors
     if (!empty($errors)) {
@@ -108,7 +106,7 @@ function process_registration($pdata) {
             $data['error'] = 'Request could not be sent. Please try again or contact us directly.';
         }
     }
-    
+
     return $data;
 }
 
@@ -117,10 +115,10 @@ function sendRegistration($posted){
     /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
     //$to_email = "lifelineprc@sbcglobal.net";
     $to_email = "lifelineprc@sbcglobal.net";
-    
-    
+
+
     $subject = "New Walk for Life 2014 Registration";
-    
+
     $message = "A new registration has been submitted through the website.\n\n";
 
     if(array_key_exists("teammate", $posted)){
@@ -159,5 +157,3 @@ function sendRegistration($posted){
     }
 }
 ?>
-</body>
-</html>
