@@ -1,10 +1,12 @@
 <?php
 
+header('Content-Type: application/json');
+
 $type = $_GET['type'];
 $toAssocArray = true;
-$pdata = json_decode($_POST["formData"], $toAssocArray);
+$json = $_POST["formData"];
+$pdata = json_decode(stripslashes($json), $toAssocArray);
 
-// check type to process ==
 switch($type) {
     case "reg":
         $rdata = process_registration($pdata);
@@ -16,6 +18,7 @@ switch($type) {
         return false;
 }
 // return all our data to an AJAX call
+
 echo json_encode($rdata);
 
 // ===== FUNCTIONS ===== //
@@ -57,8 +60,8 @@ function process_appointment($pdata) {
 function sendAppointmentRequest($posted){
 
     /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
-    // $to_email = "missywilliams85@gmail.com";
-    $to_email = "lifelineprc@sbcglobal.net";
+    $to_email = "missywilliams85@gmail.com";
+    // $to_email = "lifelineprc@sbcglobal.net";
 
 
     $subject = "New Appointment Request";

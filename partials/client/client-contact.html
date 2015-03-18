@@ -5,28 +5,6 @@
     <p>Lifeline is a non-profit organization, providing help and non-judgmental support to anyone facing unexpected pregnancy, regardless of his or her income, marital status, religious beliefs or what decision is made regarding the pregnancy.</p>
     <p><b>All of our services are free and confidential.</b></p>
     <div class="well appointment-request inline valign-top">
-        <!-- <p><b>Request an appointment by emailing <a href="emailto:lifelineprc@sbcglobal.net">lifelineprc@sbcglobal.net</a> the following informtion:</b></p>
-        <ul>
-            <li>Name</li>
-            <li>Email address</li>
-            <li>Date of birth</li>
-            <li>Preferred day of service:
-                <ul>
-                    <li ng-repeat="d in appointmentDays">{{d.day}}</li>
-                </ul>
-            </li>
-            <li>Preffered time of service:
-                <ul>
-                    <li ng-repeat="t in appointmentTimes">{{t.time}}</li>
-                </ul>
-            </li>
-            <li>Type of service:
-                <ul>
-                    <li ng-repeat="s in appointmentServices">{{s.service}}</li>
-                </ul>
-            </li>
-        </ul>
-        <p>We cannot guarantee that the appointment time you request will be available, however, we will do all we can to schedule an appointment for you as close to the time you requested as possible. You will receive a confirmation email for your appointment at the email address you listed above. </p> -->
         <h3 class="success">{{message}}</h3>
         <p>Request an appointment by filling in the form below:</p>
         <form name="appointmentForm" class="contact-form css-form" ng-submit="submitForm()" novalidate>

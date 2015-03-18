@@ -83,7 +83,8 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
                 url: "process.php?type=appointment",
                     method: "POST",
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    data: 'formData=' + JSON.stringify($scope.appointment)
+                    data: 'formData=' + angular.toJson($scope.appointment),
+                    accept: 'application/json'
                 })
                 .success(function(data) {
                     if (data.errors) {
