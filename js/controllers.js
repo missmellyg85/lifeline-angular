@@ -149,7 +149,8 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
                 url: "process.php?type=reg",
                     method: "POST",
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    data: 'formData=' + JSON.stringify($scope.reg)
+                    data: 'formData=' + angular.toJson($scope.reg),
+                    accept: 'application/json'
                 })
                 .success(function(data) {
                     if(data.errors){
