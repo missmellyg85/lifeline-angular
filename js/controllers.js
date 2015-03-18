@@ -114,6 +114,57 @@ myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location',
   function($scope, $routeParams, $location, $http) {
     $scope.navigation = "partials/supporter/supporter-nav.html";
 
+    $scope.volunteerFormInfo = {
+        volunteer: {
+            showVolunteerOptions: 'true',
+            blurb: 'To have a volunteer application sent to you, please fill out the form below:',
+            options: [
+                {name: 'Peer Counselor'}, 
+                {name: 'DadLINE Mentor'}, 
+                {name: 'Special Projects Only'}
+            ],
+            volunteerType: 'volunteer'
+        },
+        board: {
+            blurb: 'Lifeline is governed by a volunteer Board of Directors.  To learn more about Lifeline’s Board of Directors or to inquire about Board membership, please fill out the form below to be contacted:',
+            volunteerType: 'board'
+        }
+    };
+
+    $scope.volunteer = {};
+    $scope.submitVolunteerForm = function(type) {
+        $scope.submitted = true;
+        if ($scope.volunteerForm.$valid) {
+            $scope.volunteer['type'] = type;
+            $http({
+                url: "process.php?type=volunteer",
+                    method: "POST",
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    data: 'formData=' + angular.toJson($scope.volunteer),
+                    accept: 'application/json'
+                })
+                .success(function(data) {
+                    if (data.errors) {
+                        $scope.errors = [];
+                        for(var error in data.errors) {
+                            $scope.errors[error] = true;
+                        }
+                    } else if(data.error) {
+                        $scope.error = data.error;
+                    } else {
+                        // if successful, bind success message to message and set form to pristine
+                        $scope.message = data.message;
+                        $scope.volunteerForm.$setPristine();
+                        $scope.submitted = false;
+                        $scope.volunteer = {};
+                    }
+                })
+                .error(function(data) {
+
+                });
+        };
+    };
+
     $scope.allowDisplay = false;
     $scope.assignDisplayAllowance = function() {
         $scope.allowDisplay = true;

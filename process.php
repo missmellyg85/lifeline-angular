@@ -14,6 +14,9 @@ switch($type) {
     case "appointment":
         $rdata = process_appointment($pdata);
         break;
+    case "volunteer":
+        $rdata = process_volunteer($pdata);
+        break;
     default:
         return false;
 }
@@ -120,7 +123,7 @@ function sendRegistration($posted){
     $to_email = "lifelineprc@sbcglobal.net";
 
 
-    $subject = "New Walk for Life 2014 Registration";
+    $subject = "New Walk for Life 2015 Registration";
 
     $message = "A new registration has been submitted through the website.\n\n";
 
@@ -151,6 +154,80 @@ function sendRegistration($posted){
     $message .= "\n\nPlease contact this registrant to confirm their registration.";
 
     //$additional_headers = 'From: New Walk for Life 2014 Registration <donotreply@lifeline.com>';
+
+    // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
+    if (mail($to_email,$subject,$message)) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+function process_volunteer($pdata) {
+    $errors = array();
+    $data = array();
+
+    // validate the variables
+    if (empty($pdata['name']))
+            $errors['name'] = 'Name is required.';
+
+    if (empty($pdata['email']))
+            $errors['email'] = 'Email is required.';
+
+    if (empty($pdata['address']))
+            $errors['address'] = 'Address is required.';
+
+    if (empty($pdata['phone']))
+            $errors['phone'] = 'Phone number is required.';
+
+    // response if there are errors
+    if (!empty($errors)) {
+        // if there are items in our errors array, return those errors
+        $data['success'] = false;
+        $data['errors']  = $errors;
+    } else {
+        // create and send off email
+        if(sendVolunteerRequest($pdata)){
+            // if the email sent and there are no errors, return a message
+            $data['success'] = true;
+            $data['message'] = 'Request has been submitted! You will be contacted soon with the requested information.';
+        } else {
+            // if the email could not send, return a message
+            $data['success'] = false;
+            $data['error'] = 'Request could not be sent';
+        }
+    }
+
+    return $data;
+}
+
+function sendVolunteerRequest($posted){
+
+    /* All form fields are automatically passed to the PHP script through the array $HTTP_POST_VARS. */
+    // $to_email = "missywilliams85@gmail.com";
+    $to_email = "lifelineprc@sbcglobal.net";
+
+    $type = $posted['type'];
+
+    $subject = "A new request has been submitted through the website!";
+    if($type == "volunteer") {
+        $subject = "Someone is interested in becoming a volunteer!";
+        $message = "A request for information about volunteering has been submitted through the website.\n\n";
+    } elseif ($type == "board") {
+        $subject = "You have a new request to learn more about the Board of Directors!";
+        $message = "A request for information about the Board of Directors has been submitted through the website.\n\n";
+    }
+
+    $message .= "Name: ".$posted['name'];
+    $message .= "\nEmail: ".$posted['email'];
+    $message .= "\nAddress: ".$posted['address'];
+    $message .= "\nPhone: ".$posted['phone'];
+
+    if($type == "volunteer"){
+        $message .= "\nType of service preferred: ".$posted['serviceType'];
+    }
+
+    //$additional_headers = 'From: New Appointment Request <donotreply@lifeline.com>';
 
     // Sends the mail and outputs the "Thank you" string if the mail is successfully sent, or the error string otherwise. */
     if (mail($to_email,$subject,$message)) {
