@@ -15,8 +15,6 @@ myAppControllers.controller('Lifeline', ['$scope', '$routeParams', '$location',
             fax: '660-665-9497',
             email: 'LifelinePRC@sbcglobal.net',
             supporterUrl: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YU4ZL2SKUKCDU',
-            supportButton: 'partials/lifeline/lifeline-support.html',
-            clientButton: 'partials/lifeline/lifeline-client.html',
             hours: 'M-W 9:00am - 5:00pm, Th 10:00am-6:00pm'
             };
     }]);
@@ -112,7 +110,7 @@ myAppControllers.controller('Client', ['$scope', '$routeParams', '$location', '$
 
 myAppControllers.controller('Supporter', ['$scope', '$routeParams', '$location', '$http',
   function($scope, $routeParams, $location, $http) {
-    $scope.navigation = "partials/supporter/supporter-nav.html";
+    $scope.navigation = "partials/supporter/supporter-nav2.html";
 
     $scope.volunteerFormInfo = {
         volunteer: {

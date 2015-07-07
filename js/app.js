@@ -10,7 +10,7 @@ angular.module('myApp', [
   'myAppControllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/index', {templateUrl: 'partials/supporter/supporter-index.html', controller: 'Supporter'});
+  $routeProvider.when('/index', {templateUrl: 'partials/supporter/supporter-index.html?20150706', controller: 'Supporter'});
   
   $routeProvider.when('/services/', {templateUrl: 'partials/client/client-services.html', controller: 'Client'});
   $routeProvider.when('/services/:service', {templateUrl: 'partials/client/client-services.html', controller: 'Client'});
